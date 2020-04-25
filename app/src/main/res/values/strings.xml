@@ -1,0 +1,7 @@
+<resources>
+  <string name="app_name">JansenApp</string>
+    <string name="label_tracks">Tracks</string>
+  <string name="label_films">Films</string>
+  <string name="label_tv_shows">TV Shows</string>
+  <string name="label_audio_books">Audiobooks</string>
+</resources>

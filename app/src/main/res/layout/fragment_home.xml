@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:padding="@dimen/padding_medium"
+                    android:id="@+id/textViewLastVisited"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    android:layout_height="wrap_content"/>
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/padding_medium"
+                    android:text="@string/label_tracks"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:paddingEnd="@dimen/padding_small"
+                    android:paddingStart="@dimen/padding_small"
+                    android:id="@+id/recyclerViewTracks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/padding_medium"
+                    android:text="@string/label_films"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:paddingEnd="@dimen/padding_small"
+                    android:paddingStart="@dimen/padding_small"
+                    android:id="@+id/recyclerViewFilms"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/padding_medium"
+                    android:text="@string/label_tv_shows"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:paddingEnd="@dimen/padding_small"
+                    android:paddingStart="@dimen/padding_small"
+                    android:id="@+id/recyclerViewTvShows"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/padding_medium"
+                    android:text="@string/label_audio_books"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:paddingEnd="@dimen/padding_small"
+                    android:paddingStart="@dimen/padding_small"
+                    android:id="@+id/recyclerViewAudiobooks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</layout>

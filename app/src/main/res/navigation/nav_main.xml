@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/homeFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_main">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.jansenapp.ui.home.HomeFragment"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/goToTrackDetailFragment"
+            app:destination="@id/trackDetailFragment">
+            <argument
+                android:name="trackId"
+                app:argType="integer"
+                app:nullable="false" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/trackDetailFragment"
+        android:name="com.example.jansenapp.ui.home.detail.TrackDetailFragment"
+        android:label="fragment_track_detail"
+        tools:layout="@layout/fragment_track_detail">
+
+        <argument
+            android:name="trackId"
+            app:argType="integer"
+            app:nullable="false" />
+
+    </fragment>
+
+</navigation>

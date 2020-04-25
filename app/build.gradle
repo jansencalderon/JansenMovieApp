@@ -1,0 +1,137 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'realm-android'
+apply plugin: "androidx.navigation.safeargs"
+
+kapt {
+    generateStubs = true
+}
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+    defaultConfig {
+        dataBinding {
+            enabled = true
+        }
+        viewBinding {
+            enabled = true
+        }
+
+        vectorDrawables.useSupportLibrary = true
+
+        applicationId "com.example.jansenapp"
+        minSdkVersion 25
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    def nav_version = "2.2.2"
+
+    def core_ktx_version = "1.2.0"
+    def constraint_layout_version = "1.1.3"
+    def recyclerview_version = "1.1.0"
+    def cardview_version = "1.0.0"
+    def appcompat_version = "1.1.0"
+    def material_version = "1.1.0"
+    def lifecycle_version = "2.1.0"
+    def retrofit2_version = "2.8.1"
+    def okhttp3_version = "4.5.0"
+
+    def rxbinding_kotlin = '2.1.1'
+    def rxandroid_version = '2.1.1'
+    def rxkotlin_version = '2.3.0'
+
+    def glide_version = "4.11.0"
+    def timber_version = "4.7.1"
+    def dagger_version = '2.22.1'
+    def assist_inject_version = '0.5.0'
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    //android x
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "androidx.core:core-ktx:$core_ktx_version"
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
+    implementation "androidx.recyclerview:recyclerview:$recyclerview_version"
+    implementation "androidx.cardview:cardview:$cardview_version"
+
+    //navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    //material components
+    implementation "com.google.android.material:material:$material_version"
+
+    // ViewModel and LiveData
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-reactivestreams:$lifecycle_version"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+    testImplementation "androidx.arch.core:core-testing:$lifecycle_version"
+
+    // Retrofit2
+    implementation "com.squareup.retrofit2:retrofit:$retrofit2_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit2_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit2_version"
+
+    // okhttp3
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp3_version"
+    implementation "com.squareup.okhttp3:okhttp:$okhttp3_version"
+    androidTestImplementation "com.squareup.okhttp3:mockwebserver:$okhttp3_version"
+
+    // Rx2Java
+    implementation "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
+    implementation "io.reactivex.rxjava2:rxkotlin:$rxkotlin_version"
+    implementation "com.jakewharton.rxbinding2:rxbinding-kotlin:$rxbinding_kotlin"
+    implementation "com.jakewharton.rxbinding2:rxbinding-appcompat-v7-kotlin:$rxbinding_kotlin"
+
+    // Dagger 2
+    implementation "com.google.dagger:dagger:$dagger_version"
+    implementation "com.google.dagger:dagger-android:$dagger_version"
+    implementation "com.google.dagger:dagger-android-support:$dagger_version"
+    kapt "com.google.dagger:dagger-android-processor:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+    kaptAndroidTest "com.google.dagger:dagger-compiler:$dagger_version"
+    compileOnly "com.squareup.inject:assisted-inject-annotations-dagger2:$assist_inject_version"
+    kapt "com.squareup.inject:assisted-inject-processor-dagger2:$assist_inject_version"
+
+    // Glide
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    implementation "com.github.bumptech.glide:annotations:$glide_version"
+    implementation "com.github.bumptech.glide:okhttp3-integration:$glide_version"
+    annotationProcessor "com.github.bumptech.glide:glide:$glide_version"
+    kapt "com.github.bumptech.glide:compiler:$glide_version"
+
+    // Timber Logging
+    implementation "com.jakewharton.timber:timber:$timber_version"
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}
