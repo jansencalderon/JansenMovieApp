@@ -27,6 +27,7 @@ class TrackRepository @Inject constructor(
     private fun getTracksRemote(): Observable<List<Track>> =
         api.getSongs()
             .toObservable()
+            .distinctUntilChanged()
             .map { response ->
                 Timber.d("Tracks from Remote: ${response.results}")
                 saveToDatabase(response.results.map { it.toTrackDomain })

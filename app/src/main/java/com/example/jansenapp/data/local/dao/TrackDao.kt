@@ -17,6 +17,7 @@ class TrackDao @Inject constructor() {
     fun get(id: Int): Observable<Track> = Realm.getDefaultInstance().where(TrackDto::class.java)
         .equalTo(TrackDto::collectionId.name, id)
         .findObservable()
+        .onErrorReturn { null }
         .map {
             it.toTrackDomain
         }

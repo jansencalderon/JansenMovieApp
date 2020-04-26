@@ -1,21 +1,15 @@
 package com.example.jansenapp.ui.home.detail
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.MediaController
-import androidx.core.content.res.ResourcesCompat
 import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
-
 import com.example.jansenapp.R
 import com.example.jansenapp.base.BaseFragment
-import com.example.jansenapp.base.ext.component.makeVisible
 import com.example.jansenapp.base.ext.component.makeVisibleOrGone
 import com.example.jansenapp.base.ext.withBinding
 import com.example.jansenapp.base.ext.withViewModel
@@ -23,7 +17,6 @@ import com.example.jansenapp.base.model.LiveResult
 import com.example.jansenapp.base.utils.BlurTransformation
 import com.example.jansenapp.databinding.FragmentTrackDetailBinding
 import com.example.jansenapp.domain.model.Track
-import kotlinx.android.synthetic.main.item_track.view.*
 
 class TrackDetailFragment : BaseFragment() {
 
@@ -98,6 +91,13 @@ class TrackDetailFragment : BaseFragment() {
             textViewDisplayName.text = track.nameDisplay
             textViewArtist.text = track.artistName
             textViewGenre.text = track.primaryGenreName
+            textViewTrackPrice.text = track.priceDisplay
+            textViewReleaseDate.text = track.releaseDateDisplay
+
+
+            textViewCopyright.text = track.copyright
+            textViewCopyright.makeVisibleOrGone(textViewCopyright.text.isNotEmpty())
+
             textViewSynopsis.text = track.longDescription ?: track.description
             textViewSynopsisHeader.makeVisibleOrGone(textViewSynopsis.text.isNotEmpty())
             textViewSynopsis.makeVisibleOrGone(textViewSynopsis.text.isNotEmpty())

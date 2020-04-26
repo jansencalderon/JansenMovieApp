@@ -1,5 +1,9 @@
 package com.example.jansenapp.domain.model
 
+import com.example.jansenapp.base.ext.component.toDate
+import com.example.jansenapp.base.ext.component.toReadableString
+import com.example.jansenapp.domain.enums.DateTimeFormat
+
 data class Track(
     val collectionId: Int = 0,
     val wrapperType: String = "",
@@ -31,4 +35,8 @@ data class Track(
 
     val priceDisplay
         get() = "$currency $collectionPrice"
+
+    val releaseDateDisplay = releaseDate.toDate(DateTimeFormat.API_DATE)?.toReadableString(
+        DateTimeFormat.DATE_LONG
+    )
 }

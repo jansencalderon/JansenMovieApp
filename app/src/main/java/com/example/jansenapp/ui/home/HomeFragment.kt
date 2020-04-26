@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.Observer
+import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,6 +21,7 @@ import com.example.jansenapp.databinding.FragmentHomeBinding
 import com.example.jansenapp.base.ext.withBinding
 import com.example.jansenapp.base.ext.withViewModel
 import com.example.jansenapp.domain.model.Track
+import io.reactivex.Observable
 
 class HomeFragment : BaseFragment() {
 
@@ -123,7 +125,13 @@ class HomeFragment : BaseFragment() {
     }
 
     private fun onItemClick(track: Track) {
-        findNavController().navigate(HomeFragmentDirections.goToTrackDetailFragment(track.collectionId))
+        when (findNavController().currentDestination?.id) {
+            R.id.homeFragment -> findNavController().navigate(
+                HomeFragmentDirections.goToTrackDetailFragment(
+                    track.collectionId
+                )
+            )
+        }
     }
 
 }

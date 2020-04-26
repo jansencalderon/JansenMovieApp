@@ -92,8 +92,17 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/margin_extra_small"
                             android:fontFamily="sans-serif-smallcaps"
-                            android:text="A Star Is Born Soundtrack"
+                            tools:text="A Star Is Born Soundtrack"
                             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/textViewReleaseDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_small"
+                            android:fontFamily="sans-serif-condensed-light"
+                            tools:text="Artist: Jansen Calderon"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:id="@+id/textViewGenre"
@@ -101,7 +110,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/margin_small"
                             android:fontFamily="sans-serif-condensed-light"
-                            android:text="Artist: Jansen Calderon"
+                            tools:text="Artist: Jansen Calderon"
                             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
 
                         <com.google.android.material.textview.MaterialTextView
@@ -110,16 +119,25 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/margin_small"
                             android:fontFamily="sans-serif-condensed-light"
-                            android:text="Artist: Jansen Calderon"
+                            tools:text="Artist: Jansen Calderon"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/textViewTrackPrice"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_small"
+                            android:fontFamily="sans-serif-condensed-light"
+                            tools:text="Artist: Jansen Calderon"
                             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:id="@+id/textViewSynopsisHeader"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/margin_medium"
+                            android:layout_marginTop="@dimen/margin_large"
                             android:fontFamily="sans-serif-smallcaps"
-                            android:text="Synopsis"
+                            android:text="@string/label_synopsis"
                             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
 
                         <com.google.android.material.textview.MaterialTextView
@@ -128,7 +146,16 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/margin_small"
                             android:fontFamily="sans-serif-condensed-light"
-                            android:text="From Lucasfilm comes the first of the Star Wars stand-alone films – Rogue One: A Star Wars Story, an epic adventure. In a time of conflict, a group of unlikely heroes band together on a mission to steal the plans to the Death Star, the Empire’s ultimate weapon of destruction. This key event in the Star Wars timeline brings together ordinary people who choose to do extraordinary things, and in doing so, become part of something greater than themselves."
+                            tools:text="From Lucasfilm comes the first of the Star Wars stand-alone films – Rogue One: A Star Wars Story, an epic adventure. In a time of conflict, a group of unlikely heroes band together on a mission to steal the plans to the Death Star, the Empire’s ultimate weapon of destruction. This key event in the Star Wars timeline brings together ordinary people who choose to do extraordinary things, and in doing so, become part of something greater than themselves."
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/textViewCopyright"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_large"
+                            android:fontFamily="sans-serif-condensed-light"
+                            tools:text="Artist: Jansen Calderon"
                             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
 
                     </androidx.appcompat.widget.LinearLayoutCompat>
